@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-start pt-12 min-h-screen bg-white text-gray-800">
+    <main className="flex flex-col items-center justify-start pt-6 min-h-screen bg-white text-gray-800">
       <div className="logo-container animate-logo-in mt-6">
         <img
           src="/logo.png"
