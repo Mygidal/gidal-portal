@@ -1,7 +1,8 @@
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-start pt-6 min-h-screen bg-white text-gray-800">
-      <div className="logo-container animate-logo-in mt-6">
+      <div className="logo-container animate-logo-in">
+
         <img
           src="/logo.png"
           alt="GidAI Technologies"
@@ -11,7 +12,8 @@ export default function Home() {
         <div className="star" />
       </div>
 
-      <p className="mt-1 text- lg font-light text-center px-4 fade-up">
+      <p className="mt-2 text-lg font-light text-center px-4 fade-up">
+
         Unified AI platform for travel, delivery, apps and design.<br />
         Powered by <strong>GidAI Technologies</strong>
       </p>

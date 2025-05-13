@@ -147,3 +147,7 @@ body {
     transform: translateY(0);
   }
 }
+/* Скрива preview иконата на Vercel */
+iframe[title="Vercel Preview UI"] {
+  display: none !important;
+}
