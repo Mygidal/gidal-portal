@@ -78,3 +78,19 @@ body {
   );
   animation: shine 2.2s ease-in-out 1;
 }
+.shine-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 2.2s ease-in-out;
+  animation-delay: 0.9s;
+}
