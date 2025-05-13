@@ -60,7 +60,7 @@ body {
 }
 
 .animate-logo-in {
-  animation: fade-zoom-in 1.2s ease-out forwards;
+  animation: fade-zoom-in 1.5s ease-out forwards;
 }
 
 @keyframes shine {
@@ -84,7 +84,7 @@ body {
   position: absolute;
   top: 0;
   left: -40%;
-  width: 20%;
+  width: 12%;
   height: 100%;
   background: linear-gradient(
     120deg,
@@ -93,7 +93,7 @@ body {
     rgba(255, 255, 255, 0) 100%
   );
   animation: shine 1.5s ease-in-out 1;
-  animation-delay: 1.2s;
+  animation-delay: 1.5s;
 }
 .fade-up {
   opacity: 0;
@@ -117,7 +117,7 @@ body {
   height: 14px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 14px 7px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 18px 9px rgba(202, 166, 89, 0.719);
   opacity: 0;
   transform: scale(0);
   animation: sparkle 0.5s ease-out 2.2s forwards;
