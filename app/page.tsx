@@ -11,7 +11,7 @@ export default function Home() {
         <div className="star" />
       </div>
 
-      <p className="mt-1 text-base font-light text-center px-4 fade-up">
+      <p className="mt-1 text- lg font-light text-center px-4 fade-up">
         Unified AI platform for travel, delivery, apps and design.<br />
         Powered by <strong>GidAI Technologies</strong>
       </p>
