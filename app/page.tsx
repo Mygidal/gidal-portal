@@ -2,12 +2,15 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-800">
       <div className="logo-container animate-logo-in">
-        <img
-          src="/logo.png"
-          alt="GidAI Technologies"
-          className="w-64 h-auto"
-        />
-      </div>
+  <img
+    src="/logo.png"
+    alt="GidAI Technologies"
+    className="w-64 h-auto"
+  />
+  <div className="shine-overlay" />
+  <div className="star" />
+</div>
+
 
       <p className="mt-6 text-lg font-light text-center px-4 fade-up">
         Unified AI platform for travel, delivery, apps and design.<br />
