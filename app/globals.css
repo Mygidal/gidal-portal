@@ -113,16 +113,16 @@ body {
 /* Диамантено проблясване */
 .star {
   position: absolute;
-  top: 28%;
-  right: 26%;
-  width: 14px;
-  height: 14px;
+  top: 26%;
+  right: 15%;
+  width: 25px;
+  height: 25px;
   background: white;
-  border-radius: 50%;
+  border-radius: 70%;
   box-shadow: 0 0 18px 9px rgba(116, 223, 226, 0.719);
   opacity: 0;
   transform: scale(0);
-  animation: sparkle 0.5s ease-out 2.2s forwards;
+  animation: sparkle 1.9s ease-out 2.2s forwards;
 pointer-events: none;
 }
 
