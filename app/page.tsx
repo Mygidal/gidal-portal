@@ -11,13 +11,13 @@ export default function Home() {
         <div className="star" />
       </div>
 
-      <p className="mt-3 text-base font-light text-center px-4 fade-up">
+      <p className="mt-1 text-base font-light text-center px-4 fade-up">
         Unified AI platform for travel, delivery, apps and design.<br />
         Powered by <strong>GidAI Technologies</strong>
       </p>
 
       <div
-        className="mt-10 mb-10 grid gap-4 grid-cols-1 sm:grid-cols-2 fade-up"
+        className="mt-5 mb-6 grid gap-4 grid-cols-1 sm:grid-cols-2 fade-up"
       >
         <a href="https://gidal.app" className="button">GidAI</a>
         <a href="https://myappi.app" className="button">MyAppi</a>
