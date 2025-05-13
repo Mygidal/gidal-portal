@@ -78,12 +78,6 @@ body {
   overflow: hidden;
 }
 
-.logo-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
 .logo-container::after {
   content: "";
   position: absolute;
@@ -103,7 +97,11 @@ body {
   background-repeat: no-repeat;
   pointer-events: none;
 }
-
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 2.5s;
+}
 @keyframes shine {
   0% {
     left: -50%;
