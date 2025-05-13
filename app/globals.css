@@ -48,6 +48,21 @@ body {
 .button:hover {
   background-color: #1e40af;
 }
+@keyframes fade-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-logo-in {
+  animation: fade-zoom-in 1.2s ease-out forwards;
+}
+
 @keyframes shine {
   0% {
     background-position: -100%;
@@ -76,21 +91,24 @@ body {
     rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  animation: shine 2.2s ease-in-out 1;
+  animation: shine 2s ease-in-out 1;
+  animation-delay: 1.2s;
+  animation-fill-mode: backwards;
 }
-.shine-overlay {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: shine 2.2s ease-in-out;
-  animation-delay: 0.9s;
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
