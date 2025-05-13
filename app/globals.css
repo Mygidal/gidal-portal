@@ -82,21 +82,20 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: -50%;
-  width: 15%;
+  left: -75%;
+  width: 50%;
   height: 100%;
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  animation: shine 1.8s ease-in-out forwards;
+  animation: shine 2s ease-in-out 1;
   animation-delay: 1.2s;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  pointer-events: none;
+  animation-fill-mode: backwards;
 }
+
 .fade-up {
   opacity: 0;
   animation: fadeUp 1s ease-out forwards;
@@ -104,10 +103,10 @@ body {
 }
 @keyframes shine {
   0% {
-    left: -50%;
+    left: -75%;
   }
   100% {
-    left: 120%;
+    left: 100%;
   }
 }
 
@@ -119,23 +118,28 @@ body {
   height: 12px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.7);
   opacity: 0;
-  transform: scale(0);
-  animation: sparkle 0.4s ease-out 2.2s forwards;
+  animation: sparkle 0.8s ease-in 2.4s forwards;
 }
 
 @keyframes sparkle {
   0% {
     opacity: 0;
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.5);
+    transform: scale(0.2);
   }
   100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeUp {
+  from {
     opacity: 0;
-    transform: scale(0);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
