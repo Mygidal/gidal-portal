@@ -111,16 +111,17 @@ body {
 /* Диамантено проблясване */
 .star {
   position: absolute;
-  top: 6%;
-  right: 10%;
+  top: 28%;
+  right: 76%;
   width: 14px;
   height: 14px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 0 18px 9px rgba(202, 166, 89, 0.719);
+  box-shadow: 0 0 18px 9px rgba(116, 223, 226, 0.719);
   opacity: 0;
   transform: scale(0);
   animation: sparkle 0.5s ease-out 2.2s forwards;
+pointer-events: none;
 }
 
 @keyframes sparkle {
@@ -130,7 +131,7 @@ body {
   }
   50% {
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(1.8);
   }
   100% {
     opacity: 0;
