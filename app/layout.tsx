@@ -19,32 +19,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <head>
-        <script
-          src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"
-          defer
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.botpressWebChat.init({
-                composerPlaceholder: "Напиши въпрос към GidBot...",
-                botId: "gidbot-demo",
-                clientId: "gidbot-demo",
-                hostUrl: "https://cdn.botpress.cloud/webchat/v2.4",
-                messagingUrl: "https://messaging.botpress.cloud",
-                botName: "GidBot",
-                enableReset: true
-              });
-            `,
-          }}
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
