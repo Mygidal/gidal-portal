@@ -1,33 +1,8 @@
 "use client";
-declare global {
-  interface Window {
-    botpressWebChat?: {
-      sendEvent: (event: { type: "toggle" }) => void;
-    };
-  }
-}
 
-import { useEffect, useCallback } from "react";
-import Script from "next/script";
 import Image from "next/image";
 
 export default function Home() {
-  const toggleChat = useCallback(() => {
-    if (
-      typeof window !== "undefined" &&
-      window.botpressWebChat &&
-      typeof window.botpressWebChat.sendEvent === "function"
-    ) {
-      window.botpressWebChat.sendEvent({ type: "toggle" });
-    }
-  }, []);
-
-  useEffect(() => {
-    const btn = document.getElementById("gidbot-toggle");
-    btn?.addEventListener("click", toggleChat);
-    return () => btn?.removeEventListener("click", toggleChat);
-  }, [toggleChat]);
-
   return (
     <>
       {/* UI част */}
@@ -65,27 +40,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      {/* 🤖 Плаващ бутон */}
-      <button
-        id="gidbot-toggle"
-        aria-label="Отвори чат с GidBot"
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center
-                   h-14 w-14 rounded-full bg-indigo-600 text-white text-2xl shadow-lg
-                   hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300"
-      >
-        🤖
-      </button>
-
-      {/* Botpress WebChat v3.0 + конфигурация */}
-      <Script
-        src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"
-        strategy="afterInteractive"
-      />
-      <Script
-        src="https://files.bpcontent.cloud/2025/06/03/07/20250603073406-PYEHA4W8.js"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
