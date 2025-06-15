@@ -1,34 +1,26 @@
 "use client";
-
-import { useEffect, useState, useCallback } from "react";
-import Script from "next/script";
-import Image from "next/image";
-
-/* —–––––––––––––––––––––––––––––––––––––––––––
-   TypeScript декларация – можеш да я изнесеш в /types/botpress.d.ts
-––––––––––––––––––––––––––––––––––––––––––––– */
 declare global {
   interface Window {
     botpressWebChat?: {
-      sendEvent: (ev: { type: "show" | "hide" }) => void;
-      init: (config: { [key: string]: unknown }) => void;
+      sendEvent: (event: { type: "toggle" }) => void;
     };
   }
 }
 
-export default function Home() {
-  const [chatOpen, setChatOpen] = useState(false);
+import { useEffect, useCallback } from "react";
+import Script from "next/script";
+import Image from "next/image";
 
+export default function Home() {
   const toggleChat = useCallback(() => {
     if (
       typeof window !== "undefined" &&
       window.botpressWebChat &&
       typeof window.botpressWebChat.sendEvent === "function"
     ) {
-      window.botpressWebChat.sendEvent({ type: chatOpen ? "hide" : "show" });
-      setChatOpen(!chatOpen);
+      window.botpressWebChat.sendEvent({ type: "toggle" });
     }
-  }, [chatOpen]);
+  }, []);
 
   useEffect(() => {
     const btn = document.getElementById("gidbot-toggle");
@@ -38,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ------ UI част на сайта ------ */}
+      {/* UI част */}
       <main className="flex flex-col items-center pt-3 min-h-screen bg-white text-gray-800">
         <div className="logo-container animate-logo-in">
           <Image
@@ -74,48 +66,25 @@ export default function Home() {
         </div>
       </main>
 
-      {/* ------ 🤖 Плаващ бутон ------ */}
+      {/* 🤖 Плаващ бутон */}
       <button
         id="gidbot-toggle"
         aria-label="Отвори чат с GidBot"
-        className="
-          fixed bottom-6 right-6 z-50 flex items-center justify-center
-          h-14 w-14 rounded-full bg-indigo-600 text-white text-2xl shadow-lg
-          hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300
-        "
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center
+                   h-14 w-14 rounded-full bg-indigo-600 text-white text-2xl shadow-lg
+                   hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300"
       >
         🤖
       </button>
 
-      {/* ------ Botpress WebChat скрипт ------ */}
+      {/* Botpress WebChat v3.0 + конфигурация */}
       <Script
-        src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"
+        src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          const initBotpress = () => {
-            if (
-              typeof window !== "undefined" &&
-              window.botpressWebChat &&
-              typeof window.botpressWebChat.init === "function"
-            ) {
-              window.botpressWebChat.init({
-                botId: "gidbot-demo",
-                clientId: "gidbot-demo",
-                hostUrl: "https://cdn.botpress.cloud/webchat/v2.4",
-                messagingUrl: "https://messaging.botpress.cloud",
-                botName: "GidBot",
-                composerPlaceholder: "Питай GidBot...",
-                enableReset: true,
-                hideWidget: true,
-                disableAnimations: false,
-              });
-            } else {
-              setTimeout(initBotpress, 300);
-            }
-          };
-
-          initBotpress();
-        }}
+      />
+      <Script
+        src="https://files.bpcontent.cloud/2025/06/03/07/20250603073406-PYEHA4W8.js"
+        strategy="afterInteractive"
       />
     </>
   );
